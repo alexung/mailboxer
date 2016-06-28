@@ -67,7 +67,7 @@ module Mailboxer
         #   rev_request = true
         # end
 
-        rev_request = true
+        # rev_request = true
         convo = Mailboxer::ConversationBuilder.new({
           :subject    => subject,
           :created_at => message_timestamp,
