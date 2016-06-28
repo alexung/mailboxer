@@ -23,6 +23,7 @@ class CreateMailboxer < ActiveRecord::Migration
       t.column :type, :string
       t.column :body, :text
       t.column :subject, :string, :default => ""
+      t.column :review_request, :boolean, :default => false
       t.references :sender, :polymorphic => true
       t.column :conversation_id, :integer
       t.column :draft, :boolean, :default => false

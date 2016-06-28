@@ -62,7 +62,11 @@ module Mailboxer
 
       #Sends a messages, starting a new conversation, with the messageable
       #as originator
-      def send_message(recipients, msg_body, subject, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
+      def send_message(recipients, msg_body, subject, rev_request=false, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
+        if params[:review][:review_request]
+          rev_request = true
+        end
+
         convo = Mailboxer::ConversationBuilder.new({
           :subject    => subject,
           :created_at => message_timestamp,
@@ -74,6 +78,7 @@ module Mailboxer
           :conversation => convo,
           :recipients   => recipients,
           :body         => msg_body,
+          :review_request => rev_request,
           :subject      => subject,
           :attachment   => attachment,
           :created_at   => message_timestamp,

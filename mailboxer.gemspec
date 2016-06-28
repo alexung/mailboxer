@@ -20,6 +20,9 @@ Gem::Specification.new do |s|
 
   # Gem dependencies
   #
+  # Nokogiri
+  s.add_runtime_dependency('nokogiri', '>=1.6.8')
+
   # SQL foreign keys
   s.add_runtime_dependency('foreigner', '>= 0.9.1')
 
