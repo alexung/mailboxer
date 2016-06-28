@@ -1,6 +1,5 @@
 class Mailboxer::Message < Mailboxer::Notification
-  # attr_accessible :attachment if Mailboxer.protected_attributes?
-  attr_accessible :review_request
+  attr_accessible :attachment if Mailboxer.protected_attributes?
   self.table_name = :mailboxer_notifications
 
   belongs_to :conversation, :class_name => "Mailboxer::Conversation", :validate => true, :autosave => true
