@@ -24,7 +24,6 @@ class CreateMailboxer < ActiveRecord::Migration
       t.column :body, :text
       t.column :subject, :string, :default => ""
       t.column :review_request, :boolean, :default => false
-      t.column :application_sent, :boolean, :default => false
       # t.column :accepted, :boolean, :default => false
       t.references :sender, :polymorphic => true
       t.column :conversation_id, :integer
